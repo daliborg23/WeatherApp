@@ -5,5 +5,6 @@ public enum City {
     OLOMOUC,
     OSTRAVA,
     PARDUBICE,
-    PRAHA
+    PRAHA,
+    CESKY_TESIN
 }

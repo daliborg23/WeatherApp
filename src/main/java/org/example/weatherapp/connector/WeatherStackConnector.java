@@ -1,6 +1,7 @@
 package org.example.weatherapp.connector;
 
 import org.example.weatherapp.City;
+import org.example.weatherapp.dto.WeatherStackDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import java.net.URI;
@@ -14,7 +15,7 @@ public class WeatherStackConnector {
     private static String APIkey = "44a4d5ed4b0a589495354db4b0f8dd0b";
     private static String url = baseURL+urlParams+APIkey+"&query=";
 
-    public String getWeatherForCity(City city){
+    public WeatherStackDto getWeatherForCity(City city){
         URI uri = null;
         RestTemplate template = new RestTemplate();
         try {
@@ -24,8 +25,8 @@ public class WeatherStackConnector {
         catch (Exception e) {
             System.out.println("Something is wrong!\n" + uri + "\nException: " + e.getMessage());
         }
-        ResponseEntity<String> response = template.getForEntity(uri,String.class);
+        ResponseEntity<WeatherStackDto> response = template.getForEntity(uri, WeatherStackDto.class);
+        // WeatherStackException
         return response.getBody();
     }
-
 }
