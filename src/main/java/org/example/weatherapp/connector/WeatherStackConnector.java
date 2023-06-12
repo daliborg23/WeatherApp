@@ -10,10 +10,10 @@ import java.nio.charset.StandardCharsets;
 
 public class WeatherStackConnector {
     //http://api.weatherstack.com/current?access_key=44a4d5ed4b0a589495354db4b0f8dd0b&query=Cesky%20Tesin
-    private static String baseURL = "http://api.weatherstack.com/";
-    private static String urlParams = "current?access_key=";
-    private static String APIkey = "44a4d5ed4b0a589495354db4b0f8dd0b";
-    private static String url = baseURL+urlParams+APIkey+"&query=";
+    private static final String baseURL = "http://api.weatherstack.com/";
+    private static final String urlParams = "current?access_key=";
+    private static final String APIkey = "44a4d5ed4b0a589495354db4b0f8dd0b";
+    private static final String url = baseURL+urlParams+APIkey+"&query=";
 
     public WeatherStackDto getWeatherForCity(City city){
         URI uri = null;

@@ -1,0 +1,15 @@
+runtime: java17
+entrypoint: java -jar WeatherApp-1.0-SNAPSHOT.jar
+env: standard
+instance_class: F1
+handlers:
+  - url: .*
+    script: auto
+  - url: .*
+    script: auto
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: automatic
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+service_account: 712977759326-compute@developer.gserviceaccount.com
